@@ -22,8 +22,47 @@
 # print(b)
 
 """Set Traversing"""
+"""Set cannot be traversed using index value"""
+# a = {1,2,3,4,5}
+
+# for i in a: 
+#     print(i)
+
+"""Set Methods"""
 
 a = {1,2,3,4,5}
 
-for i in a:
-    print(i)
+# a.remove(2)
+# print(a)
+
+# a.pop(3)
+# print(a)
+
+# a.clear()
+# print(a)
+
+# a.discard(5)
+# print(a)
+
+# a.add(5)
+# print(a)
+
+
+a = {1,2,3,4,5}
+b = {4,5,6,7,8}
+
+# c = a.union(b) 
+c = a | b
+print(c)
+
+# d = a.intersection(b)
+d = a & b
+print(d)
+
+# e = a.difference(b)
+e = a - b
+print(e)
+
+# f = a.symmetric_difference(b)
+f = a ^ b
+print(f)
