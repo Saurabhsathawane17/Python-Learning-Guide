@@ -98,38 +98,226 @@ In Python, you can define a class using the `class` keyword. Here's a simple exa
 # obj.hello()
 
 """Single Inheritance: In single inheritance, a child class inherits from a single parent class. This is the most common form of inheritance and allows the child class to access the attributes and methods of the parent class."""
-class Animal:
-    def __init__(self,name):
-        self.name = name
+# class Animal:
+#     def __init__(self,name):
+#         self.name = name
 
-    def show(self):
-        print(f"Hello, I am a {self.name}")
+#     def show(self):
+#         print(f"Hello, I am a {self.name}")
 
-class Human(Animal):
-    def __init__(self,name,age):
-        super().__init__(name)
-        self.age = age
+# class Human(Animal):
+#     def __init__(self,name,age):
+#         super().__init__(name)
+#         self.age = age
 
-    def show(self):
-        super().show()
-        print(f" I am {self.age} years old.")
+#     def show(self):
+#         super().show()
+#         print(f" I am {self.age} years old.")
 
-animal1 = Animal("lion")
-person1 = Human("Saurabh",23)
+# animal1 = Animal("lion")
+# person1 = Human("Saurabh",23)
 
-person1.show()
+# person1.show()
 
 """Multiple Inheritance: In multiple inheritance, a child class inherits from multiple parent classes. This allows the child class to access attributes and methods from all the parent classes. However, it can lead to ambiguity if there are conflicting attributes or methods in the parent classes."""
 
-class Animal:
-    def __init__(self,name):
-        pass
+# class Animal:
+#     def __init__(self,name):
+#         pass
 
-class Human:
-    def __init__(self,name,age):
-        pass
+# class Human:
+#     def __init__(self,name,age):
+#         pass
 
-class Robot(Animal,Human):
-    name3 = "Saurabh@123"
+# class Robot(Animal,Human):
+#     name3 = "Saurabh@123"
 
-obj = Robot("saurabh")
+# obj = Robot("saurabh")
+
+
+"""Polymorphism in OOPs"""
+"""Polymorphism is a concept in Object-Oriented Programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different underlying forms (data types). In Python, polymorphism can be achieved through method overriding and duck typing."""
+"""Method Overriding: This occurs when a child class provides a specific implementation of a method that is already defined in its parent class. The child class's method overrides the parent class's method, allowing for different behavior while maintaining the same interface. example below:"""
+
+# class Animal:
+#     def show(self):
+#         print("I am a Saurabh")
+
+# class Human(Animal):
+#     def show(self):
+#         print("I am a Human")
+
+# obj = Human()
+# obj.show()
+
+"""Method Overloading: This is a form of polymorphism where multiple methods have the same name but different parameters. However, Python does not support method overloading in the traditional sense, but you can achieve similar functionality using default arguments or variable-length arguments.not supported in python"""
+
+"""Duck Typing: This is a concept in Python where the type or class of an object is less important than the methods it defines. If an object implements a certain method, it can be used in place of any other object that implements the same method, regardless of their class. This allows for greater flexibility and code reuse."""
+
+# class Animal:
+#     def show(self):
+#         print("I am showing")
+
+# class Human:
+#     def show(self):
+#         print("hello I am showing")
+
+# obj = Animal()
+# obj2 = Human()
+
+# obj.show()
+# obj2.show()
+
+"""Encapsulation in OOPs"""
+"""Encapsulation is a fundamental concept in Object-Oriented Programming (OOP) that involves bundling the data (attributes) and methods (functions) that operate on the data within a single unit, typically a class. It also involves restricting direct access to some of an object's components, which is a way of preventing unintended interference and misuse of the data."""
+"""In Python, you can achieve encapsulation by using access modifiers. The most common access modifiers are:
+1. Public: Attributes and methods that are accessible from anywhere. They are defined without any leading underscores.
+2. Protected: Attributes and methods that are intended to be accessed only within the class and its subclasses. They are defined with a single leading underscore (e.g., _attribute).
+3. Private: Attributes and methods that are intended to be accessed only within the class. They are defined with a double leading underscore (e.g., __attribute)."""
+
+# class Factory:
+#     a = "Pune"
+
+#     def show(self):
+#         print("Hello I am a factory")
+
+# obj = Factory()
+# print(obj.a) # Accessing the public attribute
+# obj.show() # Accessing the public method
+
+# class Factory:
+#     a = "Pune" # public attribute
+#     _b = "Mumbai" # protected attribute
+#     __c = "Delhi" # private attribute
+
+
+#     def show(self):
+#         print("Hello I am a Pune factory")
+
+# class Bhopal(Factory):
+#     def show2(self):
+#         print(super().a) # Accessing the public attribute of the parent class
+
+# obj = Bhopal()
+# obj.show2() # Accessing the method of the child class which accesses the attribute of the parent class
+
+# class Factory:
+#     __a = "Pune" # private attribute
+
+#     def __show(self):
+#         print("Hello I am a Pune factory") # private method
+
+# obj = Factory()
+# print(obj.__a) # This will raise an AttributeError because __a is a private attribute
+# obj.__show() # This will also raise an AttributeError because __show is a private method
+
+
+"""Demo"""
+
+# class Demo:
+#     def __init__(self):
+#         self.name = "Public Member"
+#         self._age = 30 # protected member
+#         self.__salary = 50000 # private member
+
+
+#     def show(self):
+#         print("Inside the class:")
+#         print("Name:", self.name)
+#         print("Age:", self._age)
+#         print("Salary:", self.__salary)
+
+# obj = Demo()
+# obj.show()
+
+
+
+"""Abstraction in OOPs"""
+"""Abstraction is a fundamental concept in Object-Oriented Programming (OOP) that involves hiding the complex implementation details of an object and showing only the essential features of the object. It allows programmers to focus on what an object does rather than how it does it."""
+
+# from abc import ABC, abstractmethod
+
+# class abstractclass(ABC):
+#     @abstractmethod
+#     def area(self):
+#         pass
+
+#     def perimeter(self):
+#         pass
+
+
+# class Square(abstractclass):
+#     def __init__(self,side):
+#         self.side = side
+
+#     def area(self):
+#         print("The area of the square is:", self.side ** 2)
+
+#     def perimeter(self):
+#         print("The perimeter of the square is:", 4 * self.side)
+
+# class Circle(abstractclass):
+#     def __init__(self,radius):
+#         self.radius = radius
+
+#     def perimeter(self):
+#         print("The perimeter of the circle is:", 2 * 3.14 * self.radius)
+
+#     def area(self):
+#         print("The area of the circle is:", 3.14 * self.radius ** 2)
+
+
+
+# obj = Circle(5)
+# obj2 = Square(4)
+
+"""Dunder Methods in OOPs"""
+"""Dunder methods, also known as magic methods or special methods, are a set of predefined methods in Python that have double underscores (__) at the beginning and end of their names. These methods allow you to define the behavior of your objects in response to built-in operations, such as arithmetic operations, comparisons, and string representations. Dunder methods enable you to customize how your objects interact with various Python features and operators."""
+
+
+# class Animal:
+#     def __init__(self,name):
+#         self.name = name
+
+#     def __str__(self):
+#         return f"This is an animal named {self.name}"
+    
+# obj = Animal("lion")
+# print(obj) # This will call the __str__ method to get the string representation of the object
+
+# class Animal:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f"This is an animal named {self.name}"
+    
+#     def __add__(self,other):
+#         return f"your sum of ages is {self.age + other.age}"
+    
+# obj = Animal("lion",5)
+# obj2 = Animal("tiger",3)
+
+# print(obj + obj2) # This will call the __add__ method to add the ages of the two animals    
+
+
+# class Animal:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f"This is an animal named {self.name}"
+    
+#     def __add__(self,other):
+#         sum = 0
+#         for i in other:
+#             sum += i.age
+#         return f"your sum of ages is {self.age + sum}"
+    
+# obj = Animal("lion",5)
+# obj2 = Animal("tiger",3)
+# obj3 = Animal("elephant",7)
+
+# print(obj + [obj2,obj3]) # This will call the __add__ method to add the ages of the three animals
