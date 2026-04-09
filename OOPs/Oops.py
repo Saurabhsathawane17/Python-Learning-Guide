@@ -321,3 +321,120 @@ In Python, you can define a class using the `class` keyword. Here's a simple exa
 # obj3 = Animal("elephant",7)
 
 # print(obj + [obj2,obj3]) # This will call the __add__ method to add the ages of the three animals
+
+"""Decorators in OOPs"""
+"""Decorators are a powerful feature in Python that allows you to modify the behavior of functions or methods without changing their actual code. In the context of Object-Oriented Programming (OOP), decorators can be used to enhance or modify the behavior of class methods. 
+    There are three main types of decorators in OOP: instance method decorators, class method decorators, and static method decorators."""
+
+# class Animal:
+#     @property
+#     def show(self):
+#         print("Hello How are you?")
+
+# obj = Animal()
+# obj.show
+
+
+# def decorate(func):
+#     def wrapper():
+#         print("I will print myself before the function hello")
+#         func()
+#         print("I will print myself after the function hello")
+#     return wrapper
+
+# @decorate
+# def hello():
+#     print("Hello How are you?")
+
+# hello()
+
+
+# def decorate(func):
+#     def wrapper(a,b):
+#         print("The addition of two numbers is:")
+#         func(a,b)
+#         print("This is the end of the addition operation.")
+#     return wrapper
+# @decorate
+# def addition(a,b):
+#     print(f"The sum of {a} and {b} is: {a + b}")
+
+# addition(5,3)
+
+"""Args and Kwargs in OOPs"""
+
+# def addition(*args):
+#     sum = 0
+#     for i in args:
+#         sum += i
+#     print(sum)
+
+# addition(1,2,3,4,5)
+
+# def addition(**kwargs):
+#     sum = 0
+#     for key,value in kwargs.items():
+#         sum += value
+#     print(sum)
+
+# addition(a=1,b=2,c=3,d=4,e=5)
+
+# def informtion(**kwargs):
+#     print("Your information is:")
+#     for i in kwargs:
+#         print(f"{i} : {kwargs[i]}")
+
+# informtion(name="Saurabh",age=23,city="Pune",profession="Software Engineer")
+
+# def decorate(func):
+#     def wrapper(*args,**kwargs):
+#         print("This is the start of the function.")
+#         func(*args,**kwargs)
+#         print("This is the end of the function.")
+#     return wrapper
+
+# @decorate
+# def addition(a,b):
+#     print(f"The sum of {a} and {b} is: {a + b}")
+# addition(5,3)
+
+"""Comprehensions in OOPs"""
+
+# a = 13
+# print("even") if a%2 == 0 else print("odd")  # This is a ternary operator, which is a shorthand for an if-else statement. It checks if the number is even or odd and prints the result accordingly.
+
+# l = {i : i**2 for i in range(1,11)} # This is a dictionary comprehension, which is a concise way to create dictionaries. It creates a dictionary where the keys are numbers from 1 to 10 and the values are the squares of those numbers.
+# print(l)
+
+"""Lambda Functions in OOPs"""
+
+# Lambda functions are small anonymous functions that can have any number of arguments but can only have one expression.
+
+addition = lambda a,b : a + b # This is a lambda function that takes two arguments and returns their sum.
+print(addition(5,3)) # This will call the lambda function to add the two
+
+
+"""Map, Filter and Reduce in OOPs"""
+
+# a = [1,2,3,4,5]
+
+# result = map(lambda x : x**2,a)
+
+# print(list(result)) # This will print the squares of the numbers in the list a
+
+# a = [1,2,3,4,5]
+
+# def double(x):
+#     return x * 2
+# result = map(double,a)
+# print(list(result)) # This will print the double of the numbers in the list a
+
+# def even(x):
+#     if x % 2 == 0:
+#         return True
+#     else:
+#         return False
+    
+# a = [1,2,3,4,5]
+# result = filter(even,a)
+# print(list(result)) # This will print the even numbers in the list a
