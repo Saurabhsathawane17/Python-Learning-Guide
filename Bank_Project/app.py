@@ -51,7 +51,16 @@ BASE = """<!DOCTYPE html>
   --text:#f1f5f9;--muted:#64748b;--muted2:#94a3b8;
   --radius:14px;--radius-lg:20px;
 }
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background-color:var(--bg);
+  background-image: radial-gradient(at 0% 0%, rgba(99,102,241,0.18) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, rgba(34,211,238,0.15) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(16,185,129,0.1) 0px, transparent 50%);
+  background-attachment:fixed;
+  color:var(--text);
+  min-height:100vh;
+}
 
 /* ── Layout ── */
 .page{max-width:440px;margin:0 auto;padding:20px 16px 40px;}
