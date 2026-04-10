@@ -1,0 +1,27 @@
+[
+    {
+        "name": "saurabh",
+        "age": 23,
+        "email": "saurabh@gmail.com",
+        "pin": 1234,
+        "accountNo": "$I3M1Z3",
+        "balance": 9000
+    },
+    {
+        "name": "Saurabh Sathawane",
+        "age": 23,
+        "email": "saurabhsathawane17@gmail.com",
+        "pin": 2003,
+        "accountNo": "o3mWcNuu",
+        "balance": 5000,
+        "transactions": [
+            {
+                "type": "deposit",
+                "desc": "Cash Deposit",
+                "amount": 5000,
+                "date": "Apr 10, 2026 \u00b7 08:32 PM",
+                "note": "Salary"
+            }
+        ]
+    }
+]
